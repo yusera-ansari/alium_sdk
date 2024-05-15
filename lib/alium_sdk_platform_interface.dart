@@ -23,7 +23,12 @@ abstract class AliumSdkPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<String?> getPlatformVersion() {
-    throw UnimplementedError('platformVersion() has not been implemented.');
+  Future<void> configure(String url) {
+    throw UnimplementedError('configure() has not been implemented');
+  }
+
+  Future<void> showSurvey(
+      String currentScreen, Map<String, dynamic> customerVariables) {
+    throw UnimplementedError('showSurvey() has not been implemented');
   }
 }

@@ -4,13 +4,13 @@ import 'package:alium_sdk/alium_sdk_platform_interface.dart';
 import 'package:alium_sdk/alium_sdk_method_channel.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
-class MockAliumSdkPlatform
-    with MockPlatformInterfaceMixin
-    implements AliumSdkPlatform {
+// class MockAliumSdkPlatform
+//     with MockPlatformInterfaceMixin
+//     implements AliumSdkPlatform {
 
-  @override
-  Future<String?> getPlatformVersion() => Future.value('42');
-}
+//   // @override
+//   // Future<String?> getPlatformVersion() => Future.value('42');
+// }
 
 void main() {
   final AliumSdkPlatform initialPlatform = AliumSdkPlatform.instance;
@@ -19,11 +19,11 @@ void main() {
     expect(initialPlatform, isInstanceOf<MethodChannelAliumSdk>());
   });
 
-  test('getPlatformVersion', () async {
-    AliumSdk aliumSdkPlugin = AliumSdk();
-    MockAliumSdkPlatform fakePlatform = MockAliumSdkPlatform();
-    AliumSdkPlatform.instance = fakePlatform;
+  // test('getPlatformVersion', () async {
+  //   AliumSdk aliumSdkPlugin = AliumSdk();
+  //   // MockAliumSdkPlatform fakePlatform = MockAliumSdkPlatform();
+  //   AliumSdkPlatform.instance = fakePlatform;
 
-    expect(await aliumSdkPlugin.getPlatformVersion(), '42');
-  });
+  //   expect(await aliumSdkPlugin.getPlatformVersion(), '42');
+  // });
 }
