@@ -30,8 +30,6 @@ public class AliumSdkPlugin implements FlutterPlugin, MethodCallHandler, Activit
   private MethodChannel channel;
 
   @Override
-
-
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
     channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "alium_sdk");
     channel.setMethodCallHandler(this);
@@ -53,7 +51,6 @@ public class AliumSdkPlugin implements FlutterPlugin, MethodCallHandler, Activit
               surveyParameters);
       result.success("Android " + android.os.Build.VERSION.RELEASE);
     } else {
-
       result.notImplemented();
     }
   }

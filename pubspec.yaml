@@ -1,5 +1,5 @@
 name: alium_sdk
-description: A new Flutter project.
+description: A flutter wrapper around Alium Android SDK
 version: 0.0.1
 homepage:
 
