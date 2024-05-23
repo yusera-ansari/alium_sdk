@@ -27,7 +27,7 @@ abstract class AliumSdkPlatform extends PlatformInterface {
     throw UnimplementedError('configure() has not been implemented');
   }
 
-  Future<void> showSurvey(
+  Future<void> loadAliumSurvey(
       String currentScreen, Map<String, dynamic> customerVariables) {
     throw UnimplementedError('showSurvey() has not been implemented');
   }

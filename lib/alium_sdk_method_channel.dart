@@ -16,9 +16,9 @@ class MethodChannelAliumSdk extends AliumSdkPlatform {
   }
 
   @override
-  Future<void> showSurvey(
+  Future<void> loadAliumSurvey(
       String currentScreen, Map<String, dynamic> customerVariables) async {
-    await methodChannel.invokeMethod<void>('showSurvey', <String, dynamic>{
+    await methodChannel.invokeMethod<void>('loadAliumSurvey', <String, dynamic>{
       "screen": currentScreen,
       "variables": customerVariables
     });

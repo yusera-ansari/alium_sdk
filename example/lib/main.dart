@@ -33,7 +33,7 @@ class _MyAppState extends State<MyApp> {
 
     // _aliumSdkPlugin
     //     .configure("https://assets.alium.co.in/cmmn/cstjn/cstjn_1038.json");
-    AliumSdk.showSurvey("firstscreen", {"screen": "home", "var": "type"});
+    AliumSdk.loadAliumSurvey("firstscreen", {"screen": "home", "var": "type"});
 
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling

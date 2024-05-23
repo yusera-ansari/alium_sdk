@@ -1,9 +1,9 @@
 import 'alium_sdk_platform_interface.dart';
 
 class AliumSdk {
-  static void showSurvey(
+  static void loadAliumSurvey(
       String currentScreen, Map<String, dynamic> customerVariables) {
-    AliumSdkPlatform.instance.showSurvey(currentScreen, customerVariables);
+    AliumSdkPlatform.instance.loadAliumSurvey(currentScreen, customerVariables);
   }
 
   static void configure(String url) {

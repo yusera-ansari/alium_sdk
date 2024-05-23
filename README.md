@@ -1,16 +1,38 @@
 # alium_sdk
 
-A new Flutter project.
+A wrapper around Alium's Android SDK.
 
-## Getting Started
+## Usage
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+### Configure the SDK with Configure()
 
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+import the alium package.
 
-"# alium_sdk" 
+```dart
+import 'package:alium_sdk/alium_sdk.dart';
+```
+
+Call configure method.
+
+```dart
+void main() {
+  runApp(const MyApp());
+  AliumSdk.configure("your_project_url");
+}
+```
+
+This method should be the first method called when initializing the Alium SDK. It sets the project key or URL and must be invoked as soon as possible in your application's lifecycle.
+
+### Trigger Surveys
+
+Use AliumSdk.loadAliumSurvey() with the screen name to display surveys.
+
+```dart
+ AliumSdk.loadAliumSurvey("your_screen_name", {});
+```
+
+### Passing custom parameters to survey
+
+```dart
+ AliumSdk.loadAliumSurvey("your_screen_name", {"key": "value"});
+```
