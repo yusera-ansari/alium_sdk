@@ -4,7 +4,7 @@ A wrapper around Alium's Android SDK.
 
 ## Usage
 
-### Configure the SDK with Configs()
+### Configure the SDK with Config()
 
 import the alium package.
 
