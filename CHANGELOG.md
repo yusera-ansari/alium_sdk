@@ -1,3 +1,3 @@
-## 0.0.2 -dev
+## 0.0.4-dev
 
 - TODO: Describe initial release.
