@@ -23,12 +23,12 @@ abstract class AliumSdkPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<void> configure(String url) {
-    throw UnimplementedError('configure() has not been implemented');
+  Future<void> config(String url) {
+    throw UnimplementedError('config() has not been implemented');
   }
 
-  Future<void> loadAliumSurvey(
-      String currentScreen, Map<String, dynamic> customerVariables) {
-    throw UnimplementedError('showSurvey() has not been implemented');
+  Future<void> trigger(
+      String currentScreen, Map<String, String> customerVariables) {
+    throw UnimplementedError('trigger() has not been implemented');
   }
 }

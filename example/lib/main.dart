@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:flutter/services.dart';
-import 'package:alium_sdk/alium_sdk.dart';
+import 'package:alium_sdk/alium.dart';
 
 void main() {
   runApp(const MyApp());
-  AliumSdk.configure("https://assets.alium.co.in/cmmn/cstjn/cstjn_1038.json");
+  Alium.config("https://assets.alium.co.in/cmmn/cstjn/cstjn_1038.json");
 }
 
 class MyApp extends StatefulWidget {
@@ -18,7 +17,6 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
-  final _aliumSdkPlugin = AliumSdk();
 
   @override
   void initState() {
@@ -33,7 +31,7 @@ class _MyAppState extends State<MyApp> {
 
     // _aliumSdkPlugin
     //     .configure("https://assets.alium.co.in/cmmn/cstjn/cstjn_1038.json");
-    AliumSdk.loadAliumSurvey("firstscreen", {"screen": "home", "var": "type"});
+    Alium.trigger("firstscreen", {"screen": "home", "var": "type"});
 
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling

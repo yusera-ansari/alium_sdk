@@ -4,12 +4,12 @@ A wrapper around Alium's Android SDK.
 
 ## Usage
 
-### Configure the SDK with Configure()
+### Configure the SDK with Configs()
 
 import the alium package.
 
 ```dart
-import 'package:alium_sdk/alium_sdk.dart';
+import 'package:alium_sdk/alium.dart';
 ```
 
 Call configure method.
@@ -17,7 +17,7 @@ Call configure method.
 ```dart
 void main() {
   runApp(const MyApp());
-  AliumSdk.configure("your_project_url");
+  Alium.config("your_project_url");
 }
 ```
 
@@ -25,14 +25,14 @@ This method should be the first method called when initializing the Alium SDK. I
 
 ### Trigger Surveys
 
-Use AliumSdk.loadAliumSurvey() with the screen name to display surveys.
+Use Alium.trigger() with the screen name to display surveys.
 
 ```dart
- AliumSdk.loadAliumSurvey("your_screen_name", {});
+ Alium.trigger("your_screen_name", {});
 ```
 
 ### Passing custom parameters to survey
 
 ```dart
- AliumSdk.loadAliumSurvey("your_screen_name", {"key": "value"});
+ Alium.trigger("your_screen_name", {"key": "value"});
 ```

@@ -10,15 +10,15 @@ class MethodChannelAliumSdk extends AliumSdkPlatform {
   final methodChannel = const MethodChannel('alium_sdk');
 
   @override
-  Future<void> configure(String url) async {
+  Future<void> config(String url) async {
     await methodChannel
-        .invokeMethod<void>('configure', <String, String>{"url": url});
+        .invokeMethod<void>('config', <String, String>{"url": url});
   }
 
   @override
-  Future<void> loadAliumSurvey(
-      String currentScreen, Map<String, dynamic> customerVariables) async {
-    await methodChannel.invokeMethod<void>('loadAliumSurvey', <String, dynamic>{
+  Future<void> trigger(
+      String currentScreen, Map<String, String> customerVariables) async {
+    await methodChannel.invokeMethod<void>('trigger', <String, dynamic>{
       "screen": currentScreen,
       "variables": customerVariables
     });
