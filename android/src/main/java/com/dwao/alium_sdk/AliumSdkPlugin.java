@@ -41,13 +41,13 @@ public class AliumSdkPlugin implements FlutterPlugin, MethodCallHandler, Activit
       result.success("Android " + android.os.Build.VERSION.RELEASE);
     } else if (call.method.equals("config")) {
       String url = call.argument("url");
-      Alium.configure(url);
+      Alium.config(url);
       result.success("Android " + android.os.Build.VERSION.RELEASE);
     } else if (call.method.equals("trigger")) {
       String screen = call.argument("screen");
       Map variables = call.argument("variables");
       SurveyParameters surveyParameters = new SurveyParameters(screen, variables);
-      Alium.loadAliumSurvey(activity,
+      Alium.trigger(activity,
           surveyParameters);
       result.success("Android " + android.os.Build.VERSION.RELEASE);
     } else {
