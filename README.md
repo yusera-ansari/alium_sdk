@@ -28,11 +28,11 @@ This method should be the first method called when initializing the Alium SDK. I
 Use Alium.trigger() with the screen name to display surveys.
 
 ```dart
- Alium.trigger("your_screen_name", {});
+ Alium.trigger("your_screen_name");
 ```
 
 ### Passing custom parameters to survey
 
 ```dart
- Alium.trigger("your_screen_name", {"key": "value"});
+ Alium.trigger("your_screen_name", {"dim1": "value"});
 ```

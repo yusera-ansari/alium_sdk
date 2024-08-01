@@ -28,7 +28,7 @@ abstract class AliumSdkPlatform extends PlatformInterface {
   }
 
   Future<void> trigger(
-      String currentScreen, Map<String, String> customerVariables) {
+      String currentScreen, Map<String, String>? customerVariables) {
     throw UnimplementedError('trigger() has not been implemented');
   }
 }

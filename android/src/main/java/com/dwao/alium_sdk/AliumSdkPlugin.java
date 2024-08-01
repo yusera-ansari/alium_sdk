@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import com.dwao.alium.survey.Alium;
 import com.dwao.alium.survey.SurveyParameters;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
@@ -45,7 +46,7 @@ public class AliumSdkPlugin implements FlutterPlugin, MethodCallHandler, Activit
       result.success("Android " + android.os.Build.VERSION.RELEASE);
     } else if (call.method.equals("trigger")) {
       String screen = call.argument("screen");
-      Map variables = call.argument("variables");
+      Map variables = call.argument("variables") == null ? new HashMap<>() : call.argument("variables");
       SurveyParameters surveyParameters = new SurveyParameters(screen, variables);
       Alium.trigger(activity,
           surveyParameters);
@@ -80,4 +81,4 @@ public class AliumSdkPlugin implements FlutterPlugin, MethodCallHandler, Activit
   public void onDetachedFromActivityForConfigChanges() {
     // TODO("Not yet implemented");
   }
-}
+}  

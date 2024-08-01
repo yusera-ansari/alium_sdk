@@ -17,7 +17,7 @@ class MethodChannelAliumSdk extends AliumSdkPlatform {
 
   @override
   Future<void> trigger(
-      String currentScreen, Map<String, String> customerVariables) async {
+      String currentScreen, Map<String, String>? customerVariables) async {
     await methodChannel.invokeMethod<void>('trigger', <String, dynamic>{
       "screen": currentScreen,
       "variables": customerVariables
