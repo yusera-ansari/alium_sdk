@@ -5,7 +5,7 @@ import 'package:alium_sdk/alium_sdk.dart';
 
 void main() {
   runApp(const MyApp());
-  Alium.config("");
+  Alium.config("https://assets.alium.co.in/cmmn/cstjn/cstjn_1038.json");
 }
 
 class MyApp extends StatefulWidget {
