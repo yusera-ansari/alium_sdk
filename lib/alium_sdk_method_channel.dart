@@ -16,6 +16,15 @@ class MethodChannelAliumSdk extends AliumSdkPlatform {
   }
 
   @override
+  Future<void> stop(String screenName) async {
+    if (screenName.trim().isEmpty) {
+      return;
+    }
+    await methodChannel
+        .invokeListMethod('stop', <String, String>{"screen": screenName});
+  }
+
+  @override
   Future<void> trigger(
       String currentScreen, Map<String, String>? customerVariables) async {
     await methodChannel.invokeMethod<void>('trigger', <String, dynamic>{

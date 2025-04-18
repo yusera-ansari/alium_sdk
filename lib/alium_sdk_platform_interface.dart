@@ -27,6 +27,10 @@ abstract class AliumSdkPlatform extends PlatformInterface {
     throw UnimplementedError('config() has not been implemented');
   }
 
+  Future<void> stop(String screenName) {
+    throw UnimplementedError('stop() has not been implemented');
+  }
+
   Future<void> trigger(
       String currentScreen, Map<String, String>? customerVariables) {
     throw UnimplementedError('trigger() has not been implemented');
