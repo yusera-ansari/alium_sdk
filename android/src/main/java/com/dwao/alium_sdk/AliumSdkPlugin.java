@@ -5,11 +5,15 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import com.dwao.alium.models.Survey;
 import com.dwao.alium.survey.Alium;
 import com.dwao.alium.survey.SurveyParameters;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Observer;
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.embedding.engine.plugins.activity.ActivityAware;
@@ -42,16 +46,17 @@ public class AliumSdkPlugin implements FlutterPlugin, MethodCallHandler, Activit
       result.success("Android " + android.os.Build.VERSION.RELEASE);
     } else if (call.method.equals("config")) {
       String url = call.argument("url");
-      Alium.config(url);
+      Alium.config(activity.getApplication(), url);
       result.success("Android " + android.os.Build.VERSION.RELEASE);
     } else if (call.method.equals("trigger")) {
       String screen = call.argument("screen");
       Map variables = call.argument("variables") == null ? new HashMap<>() : call.argument("variables");
       SurveyParameters surveyParameters = new SurveyParameters(screen, variables);
-      Alium.trigger(activity,
-          surveyParameters);
-      result.success("Android " + android.os.Build.VERSION.RELEASE);
-    } else {
+     Alium.trigger(activity, surveyParameters);
+    } else if(call.method.equals("stop")){
+      String screen=call.argument("screen");
+     if(!screen.isEmpty()) Alium.stop(screen);
+    }else {
       result.notImplemented();
     }
   }
@@ -81,4 +86,4 @@ public class AliumSdkPlugin implements FlutterPlugin, MethodCallHandler, Activit
   public void onDetachedFromActivityForConfigChanges() {
     // TODO("Not yet implemented");
   }
-}  
+}
