@@ -168,7 +168,7 @@ class _ThirdScreen extends State<ThirdScreen> {
 
     // _aliumSdkPlugin
     //     .configure("https://assets.alium.co.in/cmmn/cstjn/cstjn_1038.json");
-    Alium.trigger("firstscreen", {"dim1": "alium"});
+    Alium.trigger("secondscreen", {"dim1": "alium"});
 
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling

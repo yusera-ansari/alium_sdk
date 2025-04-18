@@ -1,9 +1,9 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=C:\flutter-3.7.12-stable"
-export "FLUTTER_APPLICATION_PATH=C:\Users\YuserabanoAnsari\AndroidStudioProjects\alium_sdk\example"
+export "FLUTTER_ROOT=/Users/abcom/flutter/flutter"
+export "FLUTTER_APPLICATION_PATH=/Users/abcom/Desktop/projects/flutter projects/alium_sdk/example"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
-export "FLUTTER_TARGET=lib\main.dart"
+export "FLUTTER_TARGET=lib/main.dart"
 export "FLUTTER_BUILD_DIR=build"
 export "FLUTTER_BUILD_NAME=1.0.0"
 export "FLUTTER_BUILD_NUMBER=1"
