@@ -4,8 +4,10 @@ import 'dart:async';
 import 'package:alium_sdk/alium_sdk.dart';
 
 void main() {
+WidgetsFlutterBinding.ensureInitialized();
+  Alium.config(" ");
   runApp(const MyApp());
-  Alium.config("https://assets.alium.co.in/cmmn/cstjn/cstjn_1038.json");
+
 }
 
 class MyApp extends StatefulWidget {
@@ -20,8 +22,10 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void initState() {
+   
     super.initState();
     initPlatformState();
+    
   }
 
   // Platform messages are asynchronous, so we initialize in an async method.
@@ -31,14 +35,15 @@ class _MyAppState extends State<MyApp> {
 
     // _aliumSdkPlugin
     //     .configure("https://assets.alium.co.in/cmmn/cstjn/cstjn_1038.json");
-    Alium.trigger("firstscreen", {"dim1": "alium"});
+    
 
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling
     // setState to update our non-existent appearance.
     if (!mounted) return;
-
+ Alium.trigger("secondscreen", {"dim1": "alium"});
     setState(() {});
+    Alium.stop("secondscreen");
   }
 
   @override
