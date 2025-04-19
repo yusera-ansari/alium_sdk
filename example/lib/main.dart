@@ -5,7 +5,7 @@ import 'package:alium_sdk/alium.dart';
 
 void main() {
   runApp(const MyApp());
-  Alium.config("https://assets.alium.co.in/cmmn/cstjn/cstjn_1038.json");
+  Alium.config("");
 }
 
 class MyApp extends StatefulWidget {
@@ -47,7 +47,7 @@ class _FirstScreen extends State<FirstScreen> {
     // _aliumSdkPlugin
     //     .configure("https://assets.alium.co.in/cmmn/cstjn/cstjn_1038.json");
     Alium.trigger("thirdscreen", {"dim1": "alium"});
-    Alium.trigger("firstscreen", {"dim1": "alium"});
+    Alium.trigger("secondscreen", {"dim1": "alium"});
     Alium.trigger("firstscreen", {"dim1": "alium"});
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling
@@ -111,7 +111,7 @@ class _SecondScreen extends State<SecondScreen> {
     // _aliumSdkPlugin
     //     .configure("https://assets.alium.co.in/cmmn/cstjn/cstjn_1038.json");
     Alium.trigger("secondscreen", {"dim1": "alium"});
-
+    // Alium.stop("secondscreen");
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling
     // setState to update our non-existent appearance.
