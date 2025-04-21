@@ -41,7 +41,7 @@ android {
     dependencies {
         testImplementation 'junit:junit:4.13.2'
         testImplementation 'org.mockito:mockito-core:5.0.0'
-        api 'com.github.yusera-ansari:aliumsdk:dev-0.0.2'
+        api 'com.github.yusera-ansari:aliumsdk:dev-0.0.4'
         
     }
 

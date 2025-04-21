@@ -4,8 +4,10 @@ import 'dart:async';
 import 'package:alium_sdk/alium.dart';
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
   Alium.config("");
+  runApp(const MyApp());
+  
 }
 
 class MyApp extends StatefulWidget {
