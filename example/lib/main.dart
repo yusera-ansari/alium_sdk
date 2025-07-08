@@ -7,7 +7,6 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Alium.config("");
   runApp(const MyApp());
-  
 }
 
 class MyApp extends StatefulWidget {
@@ -46,9 +45,8 @@ class _FirstScreen extends State<FirstScreen> {
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
 
-   
-    Alium.trigger("thirdscreen", {"dim1": "alium"});
-    
+    Alium.trigger("screen2", {"dim1": "alium"});
+
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling
     // setState to update our non-existent appearance.
@@ -59,7 +57,6 @@ class _FirstScreen extends State<FirstScreen> {
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       appBar: AppBar(
         title: const Text('Plugin example app'),
@@ -73,7 +70,6 @@ class _FirstScreen extends State<FirstScreen> {
               width: MediaQuery.of(context).size.width,
               child: ElevatedButton(
                 onPressed: () {
-                  
                   Navigator.of(context)
                       .push(MaterialPageRoute(builder: (context) {
                     return SecondScreen();
@@ -108,9 +104,8 @@ class _SecondScreen extends State<SecondScreen> {
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
 
- 
-    Alium.trigger("secondscreen", {"dim1": "alium"});
-    Alium.stop("secondscreen");
+    Alium.trigger("screen3", {"dim1": "alium"});
+    // Alium.stop("secondscreen");
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling
     // setState to update our non-existent appearance.
@@ -131,7 +126,7 @@ class _SecondScreen extends State<SecondScreen> {
               width: MediaQuery.of(context).size.width,
               child: ElevatedButton(
                 onPressed: () {
-                  Alium.stop("secondscreen");
+                  // Alium.stop("secondscreen");
                   Navigator.of(context)
                       .push(MaterialPageRoute(builder: (context) {
                     return ThirdScreen();
@@ -165,8 +160,7 @@ class _ThirdScreen extends State<ThirdScreen> {
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
 
- 
-    Alium.trigger("secondscreen", {"dim1": "alium"});
+    Alium.trigger("screen4", {"dim1": "alium"});
 
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling
