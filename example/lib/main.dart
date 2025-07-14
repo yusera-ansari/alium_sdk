@@ -5,7 +5,7 @@ import 'package:alium_sdk/alium_sdk.dart';
 
 void main() {
 WidgetsFlutterBinding.ensureInitialized();
-  Alium.config(" ");
+  Alium.config("https://alssurvey-dev.s3.ap-south-1.amazonaws.com/app/cstjn/cstjn_129.json");
   runApp(const MyApp());
 
 }
@@ -41,9 +41,9 @@ class _MyAppState extends State<MyApp> {
     // message was in flight, we want to discard the reply rather than calling
     // setState to update our non-existent appearance.
     if (!mounted) return;
- Alium.trigger("secondscreen", {"dim1": "alium"});
+ Alium.trigger("screen4", {"dim1": "alium"});
     setState(() {});
-    Alium.stop("secondscreen");
+    // Alium.stop("secondscreen");
   }
 
   @override

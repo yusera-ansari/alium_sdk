@@ -5,8 +5,8 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import com.dwao.alium.models.SurveyParameters;
 import com.dwao.alium.survey.Alium;
-import com.dwao.alium.survey.SurveyParameters;
 
 import java.util.HashMap;
 import java.util.Map;
