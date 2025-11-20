@@ -26,6 +26,8 @@ class _MyAppState extends State<MyApp> {
 }
 
 class FirstScreen extends StatefulWidget {
+  const FirstScreen({super.key});
+
   @override
   State<FirstScreen> createState() {
     // TODO: implement createState
@@ -45,7 +47,7 @@ class _FirstScreen extends State<FirstScreen> {
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
 
-    Alium.trigger("screen2", {"dim1": "alium"});
+    Alium.trigger("AI", {"dim1": "alium"});
 
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling
@@ -53,6 +55,12 @@ class _FirstScreen extends State<FirstScreen> {
     if (!mounted) return;
 
     setState(() {});
+  }
+
+  @override
+  void deactivate() {
+    super.deactivate();
+    Alium.stop("home");
   }
 
   @override
@@ -104,7 +112,7 @@ class _SecondScreen extends State<SecondScreen> {
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
 
-    Alium.trigger("screen3", {"dim1": "alium"});
+    Alium.trigger("second", {"dim1": "alium"});
     // Alium.stop("secondscreen");
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling
@@ -112,6 +120,12 @@ class _SecondScreen extends State<SecondScreen> {
     if (!mounted) return;
 
     setState(() {});
+  }
+
+  @override
+  void deactivate() {
+    super.deactivate();
+    Alium.stop("second");
   }
 
   @override

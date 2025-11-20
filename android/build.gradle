@@ -11,7 +11,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.3.0'
+        classpath 'com.android.tools.build:gradle:8.1.1'
     }
 }
 
@@ -33,7 +33,7 @@ android {
         namespace 'com.dwao.alium_sdk'
     }
 
-    compileSdkVersion 33
+    compileSdkVersion 35
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -47,11 +47,11 @@ android {
     dependencies {
         testImplementation 'junit:junit:4.13.2'
         testImplementation 'org.mockito:mockito-core:5.0.0'
-       api(name:"alium-release", ext:'aar')
-       implementation 'androidx.appcompat:appcompat:1.2.0'
-       implementation 'com.google.android.material:material:1.3.0'
-       implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-        // api 'com.github.yusera-ansari:aliumsdk:test-dev-1.0.9'
+//       api(name:"alium-release", ext:'aar')
+//       implementation 'androidx.appcompat:appcompat:1.2.0'
+//       implementation 'com.google.android.material:material:1.3.0'
+//       implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+         api 'com.github.yusera-ansari:aliumsdk:test-dev-1.0.10'
         
     }
 

@@ -39,6 +39,8 @@ public class AliumSdkPlugin implements FlutterPlugin, MethodCallHandler, Activit
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
     channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "alium_sdk");
     channel.setMethodCallHandler(this);
+    Alium.setShouldResetOnBackground(true);
+    Log.d("channel", "onAttachedToEngine");
   }
 
   @Override
@@ -47,6 +49,7 @@ public class AliumSdkPlugin implements FlutterPlugin, MethodCallHandler, Activit
       result.success("Android " + android.os.Build.VERSION.RELEASE);
     } else if (call.method.equals("config")) {
       String url = call.argument("url");
+
       Alium.config(activity.getApplication(), url);
       result.success("Android " + android.os.Build.VERSION.RELEASE);
     } else if (call.method.equals("trigger")) {
@@ -65,26 +68,32 @@ public class AliumSdkPlugin implements FlutterPlugin, MethodCallHandler, Activit
   @Override
   public void onDetachedFromEngine(@NonNull FlutterPluginBinding binding) {
     channel.setMethodCallHandler(null);
+    Log.d("channel", "onDetachedFromEngine");
   }
 
   @Override
   public void onDetachedFromActivity() {
     // TODO("Not yet implemented");
+    Log.d("channel", "onDetachedFromActivity");
   }
 
   @Override
   public void onReattachedToActivityForConfigChanges(ActivityPluginBinding binding) {
     // TODO("Not yet implemented");
+    Log.d("channel", "onReattachedToActivityForConfigChanges");
+//    Alium.cleanup();
   }
 
   @Override
   public void onAttachedToActivity(ActivityPluginBinding activityPluginBinding) {
     // TODO: your plugin is now attached to an Activity
     this.activity = activityPluginBinding.getActivity();
+    Log.d("channel", "onAttachedToActivity");
   }
 
   @Override
   public void onDetachedFromActivityForConfigChanges() {
     // TODO("Not yet implemented");
+    Log.d("channel", "onDetachedFromActivityForConfigChanges");
   }
 }

@@ -1,0 +1,2 @@
+/Users/abcom/Desktop/projects/flutter projects/alium_sdk/example/android/app/.cxx/RelWithDebInfo/693k1f5p/arm64-v8a/CMakeFiles/rebuild_cache.dir
+/Users/abcom/Desktop/projects/flutter projects/alium_sdk/example/android/app/.cxx/RelWithDebInfo/693k1f5p/arm64-v8a/CMakeFiles/edit_cache.dir
