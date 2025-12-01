@@ -36,3 +36,14 @@ Use Alium.trigger() with the screen name to display surveys.
 ```dart
  Alium.trigger("your_screen_name", {"dim1": "value"});
 ```
+
+### Passing parameters to survey with parameters builder:
+
+```dart
+ SurveyParameters params = SurveyParametersBuilder("screen_name")
+        .addDim(1, "alium")
+        .addDim(2, "mumbai")
+        .addCustom("number", "27838399")
+        .build();
+    Alium.triggerWithParams(params);
+```

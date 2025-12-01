@@ -1,6 +1,6 @@
 name: alium_sdk
 description: A flutter wrapper around Alium Android SDK
-version: 0.0.8-dev
+version: 1.0.0
 homepage:
 
 environment:
