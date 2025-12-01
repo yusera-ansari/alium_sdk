@@ -1,3 +1,5 @@
+import 'package:alium_sdk/survey_parameters.dart';
+
 import 'alium_sdk_platform_interface.dart';
 
 class Alium {
@@ -9,6 +11,11 @@ class Alium {
   static void trigger(String currentScreen,
       [Map<String, String>? customerVariables]) {
     AliumSdkPlatform.instance.trigger(currentScreen, customerVariables);
+  }
+
+  static void triggerWithParams(SurveyParameters parameters) {
+    AliumSdkPlatform.instance
+        .trigger(parameters.screenName, parameters.customerVariables);
   }
 
   static void config(String url) {

@@ -1,3 +1,4 @@
+import 'package:alium_sdk/survey_parameters.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -5,7 +6,7 @@ import 'package:alium_sdk/alium.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  Alium.config("");
+  Alium.config("https://assets.aliumsurvey.com/app/cstjn/cstjn_16.json");
   runApp(const MyApp());
 }
 
@@ -47,7 +48,12 @@ class _FirstScreen extends State<FirstScreen> {
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
 
-    Alium.trigger("AI", {"dim1": "alium"});
+    SurveyParameters params = SurveyParametersBuilder("AI")
+        .addDim(1, "yusera")
+        .addDim(2, "mumbai")
+        .addCustom("number", "9090909090")
+        .build();
+    Alium.triggerWithParams(params);
 
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling
