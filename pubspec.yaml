@@ -37,7 +37,8 @@ flutter:
       android:
         package: com.dwao.alium_sdk
         pluginClass: AliumSdkPlugin
-
+      ios:
+        pluginClass: AliumSdkPlugin
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
